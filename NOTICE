@@ -1,0 +1,62 @@
+ParCool! 1.12.2 — unofficial backport
+=====================================
+
+This repository contains an UNOFFICIAL backport of ParCool! to Minecraft 1.12.2.
+It is not affiliated with, endorsed by, or supported by the original author.
+Please do not report problems with this backport to the original author.
+
+
+Original work
+-------------
+ParCool!
+    https://github.com/alRex-U/ParCool
+    Copyright (C) alRex-U
+    Licensed under the GNU Lesser General Public License, version 3.
+
+Upstream snapshot used as the porting basis:
+    branch 1.16.5, mod version 3.4.3.3
+
+
+Scope of modifications (LGPL-3.0 section 5(a) notice)
+-----------------------------------------------------
+This is a modified version of the original work. Date of modification: 2026.
+
+Principal modifications:
+  * Ported from Minecraft 1.16.5 / Forge 36.x to Minecraft 1.12.2 /
+    Forge 14.23.5.2864 (MCP stable_39 mappings).
+  * Rewritten client rendering layer (player model transform, rope rendering,
+    stamina HUD) for the 1.12.2 model/render pipeline.
+  * Added the server-side "limitation" subsystem and the /parcool command tree
+    using the 1.12.2 ICommand API (1.16.5 used Brigadier).
+  * Integrated configuration through Forge's native 1.12.2 config GUI, with
+    hot-sync of client settings and explicit persistence of changes.
+  * Added English/Chinese localisation for the configuration interface.
+  * Aqua Acrobatics is used as a required API dependency instead of being
+    bundled or reimplemented.
+
+See docs/ and the git history for a detailed record of the changes.
+
+
+Licensing
+---------
+This work as a whole is distributed under the GNU Lesser General Public
+License, version 3 (SPDX: LGPL-3.0-only) — see LICENSE.
+
+Because it is a derivative work of ParCool!, it CANNOT be relicensed under
+different terms (including any all-rights-reserved or permissive licence).
+The corresponding source of every distributed build is this repository.
+
+LGPL-3.0 incorporates the GNU General Public License version 3 by reference;
+both licence texts are included in LICENSE.
+
+
+Third-party components
+---------------------
+  * Aqua Acrobatics (Hydro Agility) by Fuzs
+      Released into the public domain (Unlicense).
+      Required dependency; no source code from it is copied into this project.
+      The jar in libs/ is redistributed unmodified for build reproducibility.
+  * Patchouli by Vazkii
+      Optional dependency (in-game guide book). Not redistributed here.
+  * Minecraft Forge / Minecraft
+      Not redistributed. This project contains only original mod code.

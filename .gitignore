@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.settings/
+.classpath
+.project
+bin/
+
+# 运行目录（runClient / runServer 生成）
+run/
+runs/
+
+# 本地构建配置 —— 含本机绝对路径（JDK 位置）+ 用户名，不能进仓库
+#   仓库里提交的是 gradle.properties.example（模板）；构建前复制一份即可
+gradle.properties
+
+# 保留 libs/ 下的依赖 jar —— 它是构建输入，不是产物
+!libs/*.jar

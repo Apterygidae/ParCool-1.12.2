@@ -1,0 +1,178 @@
+import com.gtnewhorizons.retrofuturagradle.mcp.ReobfuscatedJar
+import org.jetbrains.gradle.ext.Gradle
+
+// ParCool 1.16.5 -> 1.12.2 反向移植 · P0 工程脚手架
+//
+// 构建方案整体照搬 aquaacrobatics-1.12/build.gradle（已验证可用的 1.12.2 + Mixin 组合）：
+//   1) RetroFuturaGradle 提供 MCP stable_39 开发环境
+//   2) 手工驱动 Mixin 注解处理器生成 refmap + srg 映射，并交给 reobfJar
+//   3) jar manifest 写入 FMLCorePlugin 三件套
+// 与 Aqua 的差异：不使用注入版本号的 Tags 类，版本号直接写死在 ParCool.java 常量里。
+
+plugins {
+    id("java")
+    id("java-library")
+    id("maven-publish")
+    id("eclipse")
+    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.7"
+    id("com.gtnewhorizons.retrofuturagradle") version "2.0.2"
+}
+
+version = "${mc_version}-${mod_version}"
+group = "${mod_group}"
+
+ext.id = "${mod_id}"
+ext.name = "${mod_name}"
+ext.modVersion = "${mod_version}"
+ext.description = "${mod_description}"
+ext.author = "${mod_author}"
+ext.url = "${mod_url}"
+ext.mc = "${mc_version}"
+ext.loader = "${loader_version}"
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8))
+    }
+    withSourcesJar()
+}
+
+minecraft {
+    mcVersion = "${mc_version}"
+    // -ea:com.alrex.parcool 让 dev 环境下 assert 生效（P0/P3 的启动期断言依赖它）
+    extraRunJvmArguments.addAll("-ea:${project.group}", "-Dmixin.debug.export=true")
+}
+
+repositories {
+    maven {
+        name = "Sponge"
+        url = "https://repo.spongepowered.org/repository/maven-public"
+    }
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    // ── Aqua Acrobatics：硬依赖 ────────────────────────────────────────────────
+    // 只用于编译期 API 引用；运行期由玩家安装（由 @Mod.dependencies 强制校验）。
+    // 可以直接用发行版 jar，因为 Aqua 对外暴露的 API 签名不包含任何 MC 类型
+    // （已逐字节校验：IPlayerResizeable / IPlayerSPSwimming / IModelBipedSwimming /
+    //   Pose / EntitySize 的常量池中均无 net/minecraft 引用），
+    // 因此 srg 与 MCP 命名下签名一致，不存在 NoSuchMethodError 风险。
+    compileOnly files("libs/HydroAgility-1.15.4.jar")
+    runtimeOnly files("libs/HydroAgility-1.15.4.jar")
+
+    // ── Mixin 框架 ────────────────────────────────────────────────────────────
+    api("org.spongepowered:mixin:0.8.3") { transitive = false }
+    annotationProcessor("org.ow2.asm:asm-debug-all:5.2")
+    annotationProcessor("com.google.guava:guava:24.1.1-jre")
+    annotationProcessor("com.google.code.gson:gson:2.8.6")
+    annotationProcessor("org.spongepowered:mixin:0.8.3") { transitive = false }
+}
+
+// ── Mixin refmap / srg 生成 ────────────────────────────────────────────────────
+def mixinConfigRefMap = "mixins.${project.ext.id}.refmap.json"
+def mixinTmpDir = layout.buildDirectory.dir("tmp/mixins").get().asFile
+def refMap = new File(mixinTmpDir, mixinConfigRefMap)
+def mixinSrg = new File(mixinTmpDir, "mixins.srg")
+
+tasks.named("reobfJar", ReobfuscatedJar).configure {
+    extraSrgFiles.from(mixinSrg)
+}
+
+tasks.named("compileJava", JavaCompile).configure {
+    options.encoding = "UTF-8"
+    doFirst {
+        mixinTmpDir.mkdirs()
+    }
+    options.compilerArgs += [
+            "-AreobfSrgFile=${tasks.reobfJar.srg.get().asFile}",
+            "-AoutSrgFile=${mixinSrg}",
+            "-AoutRefMapFile=${refMap}",
+    ]
+}
+
+tasks.named("compileTestJava", JavaCompile).configure {
+    options.encoding = "UTF-8"
+}
+
+processResources {
+    filteringCharset = "UTF-8"
+
+    inputs.property "mod_id", project.ext.id
+    inputs.property "mod_name", project.ext.name
+    inputs.property "mod_version", project.ext.modVersion
+    inputs.property "mod_description", project.ext.description
+    inputs.property "mod_author", project.ext.author
+    inputs.property "mod_url", project.ext.url
+    inputs.property "mod_group", project.group
+    inputs.property "mc_version", project.ext.mc
+    inputs.property "forge_version", project.ext.loader
+
+    filesMatching(["mcmod.info", "pack.mcmeta"]) { fcd ->
+        fcd.expand(
+                "mod_id": project.ext.id,
+                "mod_name": project.ext.name,
+                "mod_version": project.ext.modVersion,
+                "mod_description": project.ext.description,
+                "mod_author": project.ext.author,
+                "mod_url": project.ext.url,
+                "mod_group": project.group,
+                "mc_version": project.ext.mc,
+                "forge_version": project.ext.loader
+        )
+    }
+
+    // 把 Mixin 注解处理器产出的 refmap 打进 jar 根目录
+    from refMap
+    dependsOn("compileJava")
+}
+
+jar {
+    manifest {
+        attributes "FMLCorePlugin": "${project.group}.core.ParCoolCore"
+        attributes "FMLCorePluginContainsFMLMod": "true"
+        // 缺少这一条，FML 不会把本 jar 当作 mod 加载，@Mod 类永远不会被识别
+        attributes "ForceLoadAsMod": "true"
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+idea {
+    module {
+        inheritOutputDirs = true
+    }
+    project {
+        settings {
+            runConfigurations {
+                "1. Run Client"(Gradle) {
+                    taskNames = ["runClient"]
+                }
+                "2. Run Server"(Gradle) {
+                    taskNames = ["runServer"]
+                }
+                "3. Run Obfuscated Client"(Gradle) {
+                    taskNames = ["runObfClient"]
+                }
+                "4. Run Obfuscated Server"(Gradle) {
+                    taskNames = ["runObfServer"]
+                }
+            }
+            compiler.javac {
+                afterEvaluate {
+                    javacAdditionalOptions = "-encoding utf8"
+                    moduleJavacAdditionalOptions = [
+                            (project.name + ".main"): tasks.compileJava.options.compilerArgs.collect { '"' + it + '"' }.join(" ")
+                    ]
+                }
+            }
+        }
+    }
+}

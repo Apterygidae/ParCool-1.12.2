@@ -1,0 +1,14 @@
+# 统一换行：仓库内按 LF 存储+检出，避免 Windows / CI 之间来回抖动
+* text=auto eol=lf
+
+# 二进制：不要做任何文本/换行转换
+*.jar    binary
+*.png    binary
+*.ogg    binary
+*.class  binary
+*.dll    binary
+
+# Windows 批处理必须是 CRLF，否则 cmd 解析会出问题
+*.bat      text eol=crlf
+gradlew.bat text eol=crlf
+gradlew    text eol=lf

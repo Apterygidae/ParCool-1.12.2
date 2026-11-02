@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.alrex.parcool.mixin",
+  "plugin": "com.alrex.parcool.core.ParCoolMixinPlugin",
+  "refmap": "mixins.parcool.refmap.json",
+  "mixins": [
+    "common.EntityPlayerMixin",
+    "common.LivingEntityMixin"
+  ],
+  "client": [
+    "client.ModelPlayerMixin",
+    "client.ModelBipedMixin",
+    "client.RenderPlayerMixin",
+    "client.RenderLivingMixin",
+    "client.EntityRendererMixin",
+    "client.EntityPlayerSPMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

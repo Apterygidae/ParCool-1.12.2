@@ -1,0 +1,220 @@
+Starting a Gradle Daemon, 2 busy and 1 incompatible and 3 stopped Daemons could not be reused, use --status for details
+> Task :compileInjectedInterfacesJava NO-SOURCE
+> Task :extractDependencyATs SKIPPED
+> Task :generateForgeSrgMappings SKIPPED
+> Task :downloadVanillaJars SKIPPED
+> Task :mergeVanillaSidedJars SKIPPED
+> Task :deobfuscateMergedJarToSrg SKIPPED
+> Task :downloadFernflower SKIPPED
+> Task :decompileSrgJar SKIPPED
+> Task :cleanupDecompSrgJar SKIPPED
+> Task :patchDecompiledJar SKIPPED
+> Task :applyJST SKIPPED
+> Task :remapDecompiledJar SKIPPED
+> Task :decompressDecompiledSources UP-TO-DATE
+> Task :processInjectedInterfacesResources NO-SOURCE
+> Task :injectedInterfacesClasses UP-TO-DATE
+> Task :compilePatchedMcJava UP-TO-DATE
+> Task :processPatchedMcResources UP-TO-DATE
+> Task :patchedMcClasses UP-TO-DATE
+> Task :compileApiJava NO-SOURCE
+> Task :processApiResources NO-SOURCE
+> Task :apiClasses UP-TO-DATE
+> Task :injectTags UP-TO-DATE
+> Task :compileInjectedTagsJava NO-SOURCE
+> Task :extractNatives2 UP-TO-DATE
+> Task :createMcLauncherFiles UP-TO-DATE
+> Task :compileMcLauncherJava UP-TO-DATE
+> Task :processInjectedTagsResources NO-SOURCE
+> Task :injectedTagsClasses UP-TO-DATE
+> Task :processMcLauncherResources NO-SOURCE
+> Task :mcLauncherClasses UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :jar UP-TO-DATE
+> Task :packageMcLauncher UP-TO-DATE
+> Task :packagePatchedMc UP-TO-DATE
+
+> Task :runServer
+Do you want to start the server in online-mode? Type 'y' to do so
+[10:55:38] [main/INFO] [GradleStart]: Extra: [nogui]
+[10:55:38] [main/INFO] [GradleStart]: Found and added coremod: com.alrex.parcool.core.ParCoolCore
+[10:55:38] [main/INFO] [GradleStart]: Found and added coremod: com.fuzs.aquaacrobatics.core.AquaAcrobaticsCore
+[10:55:38] [main/INFO] [GradleStart]: Running with arguments: [--tweakClass, net.minecraftforge.fml.common.launcher.FMLServerTweaker, nogui, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[10:55:38] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[10:55:38] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[10:55:38] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[10:55:38] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLServerTweaker
+2026-09-28 10:55:38,800 main WARN Disabling terminal, you're running in an unsupported environment.
+[10:55:38] [main/INFO] [FML]: Forge Mod Loader version 14.23.5.2847 for Minecraft 1.12.2 loading
+[10:55:38] [main/INFO] [FML]: Java is OpenJDK 64-Bit Server VM, version 1.8.0_502, running on Windows 11:amd64:10.0, installed at C:\Users\<user>\.gradle\jdks\azul_systems__inc_-8-amd64-windows\zulu8.96.0.19-ca-fx-jdk8.0.502-win_x64\jre
+[10:55:38] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected. Using default libraries directory.
+[10:55:38] [main/ERROR] [FML]: Full: C:\Users\<user>\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.5.3\7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4\maven-artifact-3.5.3.jar
+[10:55:38] [main/ERROR] [FML]: Trimmed: c:/users/<user>/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
+[10:55:38] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[10:55:38] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
+[10:55:38] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
+[10:55:38] [main/INFO] [FML]: Found a command line coremod : com.fuzs.aquaacrobatics.core.AquaAcrobaticsCore
+[10:55:38] [main/INFO] [FML]: Ignoring missing certificate for coremod Aqua Acrobatics Transformer (com.fuzs.aquaacrobatics.core.AquaAcrobaticsCore), as this is probably a dev workspace
+[10:55:38] [main/INFO] [FML]: Found a command line coremod : com.alrex.parcool.core.ParCoolCore
+[10:55:38] [main/INFO] [FML]: Ignoring missing certificate for coremod ParCool Core (com.alrex.parcool.core.ParCoolCore), as this is probably a dev workspace
+[10:55:38] [main/INFO] [FML]: Searching D:\installed software\WorkBuddyspace\parcool-backport\ParCool-1.12.2\run\.\mods for mods
+[10:55:38] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[10:55:38] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[10:55:38] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[10:55:38] [main/INFO] [GradleStart]: Injecting location in coremod com.fuzs.aquaacrobatics.core.AquaAcrobaticsCore
+[10:55:38] [main/INFO] [GradleStart]: Injecting location in coremod com.alrex.parcool.core.ParCoolCore
+[10:55:38] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[10:55:38] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[10:55:38] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[10:55:38] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[10:55:38] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[10:55:38] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[10:55:39] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[10:55:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[10:55:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[10:55:39] [main/INFO] [mixin]: SpongePowered MIXIN Subsystem Version=0.8.3 Source=file:/C:/Users/<user>/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.3/5b08b203d5c601e2393be5cf9b4d39c26d12eb5f/mixin-0.8.3.jar Service=LaunchWrapper Env=SERVER
+/*************************************************************************************************************************************************************************************************************/
+/*                                                                                            SpongePowered MIXIN                                                                                            */
+/*************************************************************************************************************************************************************************************************************/
+/*                                         Code source : file:/C:/Users/<user>/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.3/5b08b203d5c601e2393be5cf9b4d39c26d12eb5f/mixin-0.8.3.jar */
+/*                                    Internal Version : 0.8.3                                                                                                                                               */
+/*                                        Java Version : 1.8 (supports compatibility 6-8)                                                                                                                    */
+/*                         Default Compatibility Level : JAVA_6                                                                                                                                              */
+/*                            Detected ASM API Version : ASM 5.0 (ASM5)                                                                                                                                      */
+/*                          Detected ASM Supports Java : Up to Java 1.8 (class file version 52.0)                                                                                                            */
+/*************************************************************************************************************************************************************************************************************/
+/*                                        Service Name : LaunchWrapper                                                                                                                                       */
+/*                                 Mixin Service Class : org.spongepowered.asm.service.mojang.MixinServiceLaunchWrapper                                                                                      */
+/*                       Global Property Service Class : org.spongepowered.asm.service.mojang.Blackboard                                                                                                     */
+/*************************************************************************************************************************************************************************************************************/
+/*                                         mixin.debug : <false>                                                                                                                                             */
+/*                                  mixin.debug.export : - <true>                                                                                                                                            */
+/*                           mixin.debug.export.filter : - - <null>                                                                                                                                          */
+/*                        mixin.debug.export.decompile : - - <true>                                                                                                                                          */
+/*                  mixin.debug.export.decompile.async : - - - <true>                                                                                                                                        */
+/* mixin.debug.export.decompile.mergeGenericSignatures : - - - <true>                                                                                                                                        */
+/*                                  mixin.debug.verify : - <false>                                                                                                                                           */
+/*                                 mixin.debug.verbose : - <false>                                                                                                                                           */
+/*                         mixin.debug.countInjections : - <false>                                                                                                                                           */
+/*                                  mixin.debug.strict : - <false>                                                                                                                                           */
+/*                           mixin.debug.strict.unique : - - <false>                                                                                                                                         */
+/*                          mixin.debug.strict.targets : - - <false>                                                                                                                                         */
+/*                                mixin.debug.profiler : - <false>                                                                                                                                           */
+/*                           mixin.dumpTargetOnFailure : <false>                                                                                                                                             */
+/*                                        mixin.checks : <false>                                                                                                                                             */
+/*                             mixin.checks.interfaces : - <false>                                                                                                                                           */
+/*                      mixin.checks.interfaces.strict : - - <false>                                                                                                                                         */
+/*                             mixin.ignoreConstraints : <false>                                                                                                                                             */
+/*                                       mixin.hotSwap : <false>                                                                                                                                             */
+/*                                           mixin.env : <false>                                                                                                                                             */
+/*                                       mixin.env.obf : - <false>                                                                                                                                           */
+/*                             mixin.env.disableRefMap : - <false>                                                                                                                                           */
+/*                               mixin.env.remapRefMap : - <true>                                                                                                                                            */
+/*                       mixin.env.refMapRemappingFile : - <>                                                                                                                                                */
+/*                        mixin.env.refMapRemappingEnv : - <searge>                                                                                                                                          */
+/*                      mixin.env.allowPermissiveMatch : - <false>                                                                                                                                           */
+/*                            mixin.env.ignoreRequired : - <false>                                                                                                                                           */
+/*                               mixin.env.compatLevel : - <false>                                                                                                                                           */
+/*                          mixin.env.shiftByViolation : - <warn>                                                                                                                                            */
+/*                      mixin.initialiserInjectionMode : <default>                                                                                                                                           */
+/*************************************************************************************************************************************************************************************************************/
+/*                                       Detected Side : SERVER                                                                                                                                              */
+/*************************************************************************************************************************************************************************************************************/
+[10:55:39] [main/INFO] [mixin]: Attempting to load Fernflower decompiler (Threaded mode)
+[10:55:39] [main/INFO] [mixin]: Fernflower could not be loaded, exported classes will not be decompiled. NoClassDefFoundError: org/jetbrains/java/decompiler/main/extern/IResultSaver
+[10:55:39] [main/INFO] [mixin]: Initialised Mixin FML Remapper Adapter with net.minecraftforge.fml.common.asm.transformers.deobf.FMLDeobfuscatingRemapper@36b310aa
+[10:55:39] [main/INFO] [mixin]: Compatibility level set to JAVA_8
+[10:55:39] [main/INFO] [Aqua Acrobatics Transformer]: Running in obf, thanks for playing with the mod!
+[10:55:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[10:55:39] [main/INFO] [ParCool Core]: [ParCool] Mixin framework initialised, config = META-INF/mixins.parcool.json
+[10:55:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[10:55:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[10:55:39] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[10:55:39] [main/INFO] [LaunchWrapper]: Loading tweak class name org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[10:55:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[10:55:39] [main/INFO] [LaunchWrapper]: Calling tweak class org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[10:55:39] [main/INFO] [mixin]: Remapping refMap mixins.aquaacrobatics.refmap.json using C:\Users\<user>\.gradle\caches\minecraft\de\oceanlabs\mcp\mcp_stable\39\rfg_srgs\srg-mcp.srg
+[10:55:39] [main/INFO] [mixin]: Remapping refMap mixins.parcool.refmap.json using C:\Users\<user>\.gradle\caches\minecraft\de\oceanlabs\mcp\mcp_stable\39\rfg_srgs\srg-mcp.srg
+[10:55:40] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.server.MinecraftServer}
+[10:55:41] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 1.12.2
+[10:55:41] [Server thread/INFO] [FML]: MinecraftForge v14.23.5.2847 Initialized
+[10:55:41] [Server thread/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
+[10:55:42] [Server thread/INFO] [FML]: Invalid recipe found with multiple oredict ingredients in the same ingredient...
+[10:55:42] [Server thread/INFO] [FML]: Replaced 1227 ore ingredients
+[10:55:42] [Server thread/INFO] [FML]: Searching D:\installed software\WorkBuddyspace\parcool-backport\ParCool-1.12.2\run\.\mods for mods
+[10:55:42] [Server thread/INFO] [FML]: Forge Mod Loader has identified 6 mods to load
+[10:55:42] [Server thread/WARN] [FML]: Missing English translation for FML: assets/fml/lang/en_us.lang
+[10:55:42] [Server thread/WARN] [FML]: Missing English translation for parcool: assets/parcool/lang/en_us.lang
+[10:55:42] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, parcool, aquaacrobatics] at CLIENT
+[10:55:42] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, parcool, aquaacrobatics] at SERVER
+[10:55:42] [Server thread/INFO] [FML]: Processing ObjectHolder annotations
+[10:55:42] [Server thread/INFO] [FML]: Found 1169 ObjectHolder annotations
+[10:55:42] [Server thread/INFO] [FML]: Identifying ItemStackHolder annotations
+[10:55:42] [Server thread/INFO] [FML]: Found 0 ItemStackHolder annotations
+[10:55:42] [Server thread/INFO] [FML]: Configured a dormant chunk cache size of 0
+[10:55:42] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[10:55:42] [Server thread/INFO] [ParCool]: [ParCool] preInit - version 3.4.3.3, coremod loaded = true
+[10:55:42] [Server thread/INFO] [ParCool]: [ParCool] Configuration target: D:\installed software\WorkBuddyspace\parcool-backport\ParCool-1.12.2\run\config\parcool.cfg
+[10:55:42] [Server thread/INFO] [ParCool]: [ParCool] Config items registered (client booleans=7, ints=10, doubles=1; server booleans=2, ints=4, doubles=1)
+[10:55:42] [Server thread/INFO] [ParCool]: [ParCool] Config saved: D:\installed software\WorkBuddyspace\parcool-backport\ParCool-1.12.2\run\config\parcool.cfg (exists=true, size=2935 bytes)
+[10:55:42] [Server thread/INFO] [FML]: Applying holder lookups
+[10:55:42] [Server thread/INFO] [FML]: Holder lookups applied
+[10:55:42] [Server thread/INFO] [FML]: Applying holder lookups
+[10:55:42] [Server thread/INFO] [FML]: Holder lookups applied
+[10:55:42] [Server thread/INFO] [FML]: Applying holder lookups
+[10:55:42] [Server thread/INFO] [FML]: Holder lookups applied
+[10:55:42] [Server thread/INFO] [FML]: Applying holder lookups
+[10:55:42] [Server thread/INFO] [FML]: Holder lookups applied
+[10:55:42] [Server thread/INFO] [FML]: Injecting itemstacks
+[10:55:42] [Server thread/INFO] [FML]: Itemstack injection complete
+[10:55:42] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[10:55:42] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[10:55:42] [Server thread/INFO] [minecraft/DedicatedServer]: Generating keypair
+[10:55:43] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on *:25565
+[10:55:43] [Server thread/INFO] [minecraft/NetworkSystem]: Using default channel type
+[10:55:43] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[10:55:43] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[10:55:43] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[10:55:43] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[10:55:43] [Server thread/INFO] [FML]: Applying holder lookups
+[10:55:43] [Server thread/INFO] [FML]: Holder lookups applied
+[10:55:43] [Server thread/INFO] [ParCool]: [ParCool] init
+[10:55:43] [Server thread/INFO] [FML]: Injecting itemstacks
+[10:55:43] [Server thread/INFO] [FML]: Itemstack injection complete
+[10:55:43] [Server thread/ERROR] [Aqua Acrobatics]: Please consider installing MixinBooter to ensure compatibility with more mods
+[10:55:43] [Server thread/INFO] [ParCool]: [ParCool] postInit
+[10:55:43] [Server thread/INFO] [ParCool]: ========== [ParCool] startup self-check ==========
+[10:55:43] [Server thread/INFO] [ParCool]:  1. Mixin framework        : OK
+[10:55:43] [Server thread/INFO] [ParCool]:  2. ParCool mixin          : PENDING (进入世界后判定)
+[10:55:43] [Server thread/INFO] [ParCool]:  3. Aqua mixin (interface) : OK (EntityPlayer implements IPlayerResizeable)
+[10:55:43] [Server thread/INFO] [ParCool]:  4. aquaacrobatics loaded  : OK
+[10:55:43] [Server thread/INFO] [ParCool]:  5. patchouli loaded       : false (optional)
+[10:55:43] [Server thread/INFO] [ParCool]: [ParCool] Aqua MovementConfig : enableCrawling=true, enableToggleCrawling=false, easyElytraTakeoff=true, noDoubleTapSprinting=false
+[10:55:43] [Server thread/WARN] [ParCool]: [ParCool] Aqua 的 easyElytraTakeoff = true：Aqua 会在空中按跳跃时主动起飞滑翔翼，
+[10:55:43] [Server thread/WARN] [ParCool]: [ParCool] 与 ParCool 的 cancelFallFlying() 语义对立（P3 阶段协调）。
+[10:55:43] [Server thread/INFO] [ParCool]:     ParCoolPlatform ready   : com.alrex.parcool.platform.ParCoolPlatform
+[10:55:43] [Server thread/INFO] [ParCool]:  6. SoundEvents registered : OK (vault = parcool:action.vault)
+[10:55:43] [Server thread/INFO] [ParCool]:  7. Potion effect          : OK (parcool:inexhaustible)
+[10:55:43] [Server thread/INFO] [ParCool]:  8. PotionType             : OK (parcool:energy_drink)
+[10:55:43] [Server thread/INFO] [ParCool]:  9. Custom attributes      : created (max_stamina=parcool.max_stamina, stamina_recovery=parcool.stamina_recovery, vanilla reference=generic.movementSpeed)
+[10:55:43] [Server thread/INFO] [ParCool]: 10. Config file           : D:\installed software\WorkBuddyspace\parcool-backport\ParCool-1.12.2\run\config\parcool.cfg (exists=true, size=2935 bytes)
+[10:55:43] [Server thread/INFO] [ParCool]: 11. Config (client)       : ParCoolIsActive=true, EnableAnimation=true, InfiniteStamina=false
+[10:55:43] [Server thread/INFO] [ParCool]: 12. Config (server)       : AdvantageousValue=false, MaxWallRunContinuableTick=100
+[10:55:43] [Server thread/INFO] [ParCool]: 13. Proxy.isActive()      : true
+[10:55:43] [Server thread/INFO] [ParCool]: =================================================
+[10:55:43] [Server thread/INFO] [FML]: Forge Mod Loader has successfully loaded 6 mods
+[10:55:43] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[10:55:43] [Server thread/INFO] [FML]: Loading dimension 0 (world) (net.minecraft.server.dedicated.DedicatedServer@1432069d)
+[10:55:43] [Server thread/INFO] [minecraft/AdvancementList]: Loaded 488 advancements
+[10:55:44] [Server thread/INFO] [FML]: Loading dimension -1 (world) (net.minecraft.server.dedicated.DedicatedServer@1432069d)
+[10:55:44] [Server thread/INFO] [FML]: Loading dimension 1 (world) (net.minecraft.server.dedicated.DedicatedServer@1432069d)
+[10:55:44] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for level 0
+[10:55:45] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing spawn area: 18%
+[10:55:45] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.5.2859
+[10:55:46] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing spawn area: 44%
+[10:55:47] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing spawn area: 73%
+[10:55:47] [Server thread/INFO] [minecraft/DedicatedServer]: Done (4.352s)! For help, type "help" or "?"
+[10:55:48] [Server thread/INFO] [FML]: Unloading dimension -1
+[10:55:48] [Server thread/INFO] [FML]: Unloading dimension 1

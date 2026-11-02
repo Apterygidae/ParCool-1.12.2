@@ -1,0 +1,51 @@
+# ──────────────────────────────────────────────────────────────────────────
+#  这是模板文件。构建前先复制成 gradle.properties：
+#      cp gradle.properties.example gradle.properties        (Windows: copy)
+#  然后按需修改。
+#
+#  为什么 gradle.properties 本身不进仓库：
+#    它包含【本机绝对路径】（JDK 位置），提交出去既会泄露用户名，
+#    又会让别人 clone 下来直接构建失败。见文末「本机工具链」一节。
+#  （gradle.properties 已写入 .gitignore）
+# ──────────────────────────────────────────────────────────────────────────
+
+# Gradle 需要足够内存完成 Minecraft 反编译
+org.gradle.jvmargs=-Xmx3G
+org.gradle.daemon=true
+
+# ── 环境 ──────────────────────────────────────────────────────────────────
+mc_version=1.12.2
+# 与 Aqua Acrobatics 使用同一 Forge 版本线，便于共用已验证的构建配置
+forge_version=1.12.2-14.23.5.2847
+loader_version=14.23.5
+# Aqua 硬依赖的目标版本（mcmod.info / 依赖区间用它）
+aqua_version=1.15.4
+
+# ── Mod 元数据 ────────────────────────────────────────────────────────────
+mod_id=parcool
+mod_name=ParCool!
+# 注意：这个值同时被 mcmod.info 使用；@Mod(version=...) 在 ParCool.java 的 VERSION 常量里，
+#       改动时两边要同步
+mod_version=3.4.3.3
+# ⚠️ 这是非官方 1.12.2 backport。请填【你自己的名字】，
+#    并保留对原作者的致谢 —— 不要写成原作者的官方构建。
+mod_author=YOUR_NAME (unofficial 1.12.2 backport of alRex_U's ParCool)
+mod_description=This enables us to act like parkour players. 1.12.2 backport, requires Aqua Acrobatics.
+mod_url=https://github.com/YOUR_NAME/ParCool-1.12.2
+mod_group=com.alrex.parcool
+
+# ── 本机工具链（必须自己填；不要把真实路径提交进仓库）────────────────────
+# 为什么需要 JDK 25：RetroFuturaGradle 2.0.2 是以 Java 25 编译发布的
+#   （class file version 69），用 JDK 21 跑 Gradle 会直接报
+#   UnsupportedClassVersionError。
+# 注意：JDK 25 只是「运行 Gradle 的 JVM」，mod 的编译目标仍然是 Java 8
+#   （见 build.gradle 的 toolchain 配置）。
+#
+# 如果不填 `installations.paths` 并关掉自动下载，Gradle 会去 GitHub 拉
+#   Temurin 8 —— 受限网络下会失败。
+#
+# 取消下面三行的注释并改成你自己机器上的路径：
+#
+# org.gradle.java.home=C:/Program Files/Microsoft/jdk-25.0.3.9-hotspot
+# org.gradle.java.installations.paths=C:/Users/<你的用户名>/.gradle/jdks/<你的 JDK 8 目录>
+# org.gradle.java.installations.auto-download=false
